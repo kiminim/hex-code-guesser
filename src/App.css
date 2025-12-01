@@ -1,0 +1,88 @@
+.container {
+	text-align: center;
+	padding: 20px;
+	font-family: system-ui, sans-serif;
+}
+
+#colour-box {
+	width: 150px;
+	height: 150px;
+	margin: 20px auto;
+	border: 2px solid #333;
+}
+
+#board {
+	display: grid;
+	grid-template-rows: repeat(6, auto);
+	gap: 10px;
+	width: fit-content;
+	margin: 20px auto;
+}
+
+.row {
+	display: flex;
+	gap: 8px;
+}
+
+.tile {
+	width: 45px;
+	height: 45px;
+	border: 2px solid #444;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.4rem;
+	font-family: monospace;
+	/* color: white;
+	background: #222; */
+	transition: background 0.3s;
+	transform-style: preserve-3d;
+}
+
+/* Flip animation */
+.tile.correct,
+.tile.present,
+.tile.absent {
+	animation: flip 0.6s ease forwards;
+}
+
+@keyframes flip {
+	0% {
+		transform: rotateX(0deg);
+	}
+	50% {
+		transform: rotateX(90deg);
+		background: #333;
+	}
+	100% {
+		transform: rotateX(0deg);
+	}
+}
+
+.correct {
+	background: #4caf50 !important;
+}
+
+.present {
+	background: #c2a202 !important;
+}
+
+.absent {
+	background: #555 !important;
+}
+
+.reset-btn {
+	background: #538d4e;
+	color: white;
+	padding: 10px 18px;
+	font-size: 1rem;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	margin-top: 10px;
+	transition: background 0.2s;
+}
+
+.reset-btn:hover {
+	background: #6aaa64;
+}
