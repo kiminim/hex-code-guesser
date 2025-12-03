@@ -111,9 +111,7 @@ export function App() {
 
 					if (checkGuess()) {
 						setTimeout(() => alert('You win!'), 1200);
-					}
-
-					if (currentRow === 5) {
+					} else if (currentRow === 5) {
 						setTimeout(() => alert(`The hex colour code was ${hexColourCode}. Try again!`), 1200)
 					}
 					setCurrentRow(currentRow + 1);
